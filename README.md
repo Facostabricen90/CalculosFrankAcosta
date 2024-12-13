@@ -1,5 +1,7 @@
 ﻿# CalculosFrankAcosta
 # Manual de Usuario
+![Home](https://github.com/user-attachments/assets/17b5d53d-23ea-49b1-8dd7-e6d2eeae6942)
+
 
 ✨✨✨ Este manual tiene como objetivo guiarte en el uso de la aplicación de cálculos, detallando las funciones de las vistas disponibles y los pasos necesarios para realizar los cálculos correctamente. ✨✨✨
 
@@ -23,6 +25,7 @@ La pantalla de inicio es la primera vista de la aplicación. Desde aquí puedes 
 ---
 
 ## **Cálculo de Productos**
+![Productos](https://github.com/user-attachments/assets/3cce9537-32cb-47e0-88c8-c5e9a50c5ee0)
 
 ### Descripción:
 📊 Esta vista permite realizar diferentes cálculos relacionados con productos, como margen de ganancia, punto de equilibrio y retorno de inversión (ROI). 📊
@@ -48,6 +51,7 @@ La pantalla de inicio es la primera vista de la aplicación. Desde aquí puedes 
 ---
 
 ## **Cálculo de Empleado**
+![EmpleadoFijo](https://github.com/user-attachments/assets/af0bae03-f003-446b-82b2-57a04045d559)
 
 ### Descripción:
 💰 Esta vista te permite realizar cálculos relacionados con el salario de un empleado, como horas extras y salario neto. 💰
@@ -67,6 +71,7 @@ La pantalla de inicio es la primera vista de la aplicación. Desde aquí puedes 
 ---
 
 ## **Cálculo de Empleador**
+![Empleado](https://github.com/user-attachments/assets/4335f78e-713c-4dba-9791-eaa812f1e16d)
 
 ### Descripción:
 📈 Desde esta vista puedes calcular el total de nómina y las obligaciones del empleador, como aportes y prestaciones sociales. 📈
