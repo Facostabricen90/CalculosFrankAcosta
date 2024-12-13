@@ -8,10 +8,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -19,10 +19,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.calculosfrankacosta.ViewModel.EmpleadorViewModel
 
 @Composable
-fun CalculoEmpleadorView() {
-    var text by remember { mutableStateOf("") }
+fun CalculoEmpleadorView(empleadorViewModel: EmpleadorViewModel) {
+    var Salario by remember { mutableStateOf("") }
+
+    val resultado by empleadorViewModel.resultado.collectAsState()
 
     Column(
         modifier = Modifier
@@ -32,9 +35,9 @@ fun CalculoEmpleadorView() {
         verticalArrangement = Arrangement.Center
     ) {
         TextField(
-            value = text,
-            onValueChange = { text = it },
-            label = { Text("Ingresa tu texto") },
+            value = Salario,
+            onValueChange = { Salario = it },
+            label = { Text("Ingresa el salario base") },
             modifier = Modifier.fillMaxWidth()
         )
 
@@ -42,12 +45,36 @@ fun CalculoEmpleadorView() {
 
         Button(
             onClick = {
-                // Aquí puedes agregar la lógica cuando se presione el botón
-                println("Texto ingresado: $text")
+                empleadorViewModel.calcularCostoTotalDeNomina(Salario.toDouble())
             },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text("Enviar")
+            Text("Calcular el total de nomina")
         }
+        Button(
+            onClick = {
+                empleadorViewModel.calcularProvisionesSociales(Salario.toDouble())
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Calcular provisiones sociales")
+        }
+        Button(
+            onClick = {
+                empleadorViewModel.calcularAportesParafiscales(Salario.toDouble())
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Calcular aportes parafiscales")
+        }
+        Button(
+            onClick = {
+                empleadorViewModel.calcularAportesParafiscales(Salario.toDouble())
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Calcular prestaciones sociales")
+        }
+        Text(text = "Resultado: ${resultado}")
     }
 }
