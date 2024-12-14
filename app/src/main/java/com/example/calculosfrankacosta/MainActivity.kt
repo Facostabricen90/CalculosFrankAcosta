@@ -15,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.calculosfrankacosta.Navigation.NavManager
 import com.example.calculosfrankacosta.ViewModel.EmpleadoViewModel
 import com.example.calculosfrankacosta.ViewModel.EmpleadorViewModel
+import com.example.calculosfrankacosta.ViewModel.HistorialViewModel
 import com.example.calculosfrankacosta.ViewModel.ProductoViewModel
 import com.example.calculosfrankacosta.ui.theme.CalculosFrankAcostaTheme
 
@@ -24,11 +25,12 @@ class MainActivity : ComponentActivity() {
         val productoViewModel : ProductoViewModel by viewModels()
         val empleadoViewModel : EmpleadoViewModel by viewModels()
         val empleadorViewModel : EmpleadorViewModel by viewModels()
+        val historialViewModel : HistorialViewModel by viewModels()
         enableEdgeToEdge()
         setContent {
             CalculosFrankAcostaTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    NavManager(productoViewModel, empleadoViewModel, empleadorViewModel)
+                    NavManager(productoViewModel, empleadoViewModel, empleadorViewModel, historialViewModel)
                 }
             }
         }
